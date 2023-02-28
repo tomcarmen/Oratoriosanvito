@@ -366,6 +366,9 @@
   <MasterDetail MasterTable="tbserv_gestione_settimane" DetailTable="tbserv_gestione_gite" EnforceReferentialIntegrity="0" CascadeUpdate="0" CascadeDelete="0">
     <Relation MasterField="IDSettimana" DetailField="IdSettimana" />
   </MasterDetail>
+  <MasterDetail MasterTable="tb_anagrafica" DetailTable="tb_prenotazione_oratorio" EnforceReferentialIntegrity="0" CascadeUpdate="0" CascadeDelete="0">
+    <Relation MasterField="COD_FISCALE" DetailField="COD_FISCALE" />
+  </MasterDetail>
   <MasterDetail MasterTable="tb_anagrafica" DetailTable="tb_genitori" EnforceReferentialIntegrity="0" CascadeUpdate="0" CascadeDelete="0">
     <Relation MasterField="COD_FISCALE" DetailField="COD_FISCALE" />
   </MasterDetail>
@@ -373,9 +376,6 @@
     <Relation MasterField="COD_FISCALE" DetailField="COD_FISCALE" />
   </MasterDetail>
   <MasterDetail MasterTable="tb_anagrafica" DetailTable="tb_scuola" EnforceReferentialIntegrity="0" CascadeUpdate="0" CascadeDelete="0">
-    <Relation MasterField="COD_FISCALE" DetailField="COD_FISCALE" />
-  </MasterDetail>
-  <MasterDetail MasterTable="tb_anagrafica" DetailTable="tb_prenotazione_oratorio" EnforceReferentialIntegrity="0" CascadeUpdate="0" CascadeDelete="0">
     <Relation MasterField="COD_FISCALE" DetailField="COD_FISCALE" />
   </MasterDetail>
   <MasterDetail MasterTable="tbserv_gestione_settimane" DetailTable="tb_prenotazione_oratorio" EnforceReferentialIntegrity="0" CascadeUpdate="0" CascadeDelete="0">
@@ -767,17 +767,17 @@ return TRUE;
 }
 
 ]]></CustomScript>
-  <Menu MenuID="10162" MenuText="PRENOTAZIONI" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="tb_prenotazione_oratorio" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="1" MenuDisplayOrder="-1" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="10163" MenuText="filtra email genitori" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="filtra email genitori" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="1" MenuDisplayOrder="-1" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="10145" MenuText="ANAGRAFICA" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="tb_anagrafica" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="1" MenuDisplayOrder="100" MenuIconClass="fa-regular fa-user" MenuNavbar="0" />
+  <Menu MenuID="10162" MenuText="PRENOTAZIONI" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="tb_prenotazione_oratorio" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="1" MenuDisplayOrder="100" MenuIconClass="fa-solid fa-calendar-week" MenuNavbar="0" />
+  <Menu MenuID="10145" MenuText="ANAGRAFICA" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="tb_anagrafica" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="1" MenuDisplayOrder="200" MenuIconClass="fa-regular fa-user" MenuNavbar="0" />
   <Menu MenuID="10158" MenuText="INGRESSI" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="tb_ingressi" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="1" MenuDisplayOrder="300" MenuIconClass="fas fa-sign-in-alt" MenuNavbar="0" />
   <Menu MenuID="10157" MenuText="TABELLE DI SERVIZIO" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="8" MenuSecurity="" MenuUrl="" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="1" MenuDisplayOrder="400" MenuIconClass="fa-solid fa-gears" MenuNavbar="1" />
-  <Menu MenuID="10146" MenuText="tb form google" MenuParentID="10157" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="tb_form_google" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="100" MenuIconClass="fab fa-google-drive" MenuNavbar="1" />
+  <Menu MenuID="10146" MenuText="tb form google" MenuParentID="10157" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="tb_form_google" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="100" MenuIconClass="fa-brands fa-google" MenuNavbar="1" />
   <Menu MenuID="10147" MenuText="Genitori" MenuParentID="10157" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="tb_genitori" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="200" MenuIconClass="fa-solid fa-children" MenuNavbar="1" />
   <Menu MenuID="10148" MenuText="Nominativi gdp" MenuParentID="10157" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="tb_nominativi_gdp" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="300" MenuIconClass="fa-solid fa-people-pulling" MenuNavbar="1" />
   <Menu MenuID="10149" MenuText="Scuola" MenuParentID="10157" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="tb_scuola" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="400" MenuIconClass="fa-solid fa-school" MenuNavbar="1" />
   <Menu MenuID="10160" MenuText="Gestione Gite" MenuParentID="10157" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="tbserv_gestione_gite" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="500" MenuIconClass="fas fa-campground" MenuNavbar="0" />
   <Menu MenuID="10161" MenuText="Gestione Settimane" MenuParentID="10157" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="tbserv_gestione_settimane" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="600" MenuIconClass="fas fa-calendar-week" MenuNavbar="0" />
+  <Menu MenuID="10163" MenuText="filtra email genitori" MenuParentID="10157" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="filtra email genitori" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="700" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="17" MenuText="ADMIN ONLY" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="1" MenuDisplayOrder="500" MenuIconClass="fa-key" MenuNavbar="1" />
   <Menu MenuID="4" MenuText="Employees" MenuParentID="17" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="employees" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="100" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="10084" MenuText="User Levels" MenuParentID="17" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="userlevels" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="200" MenuIconClass="" MenuNavbar="0" />
